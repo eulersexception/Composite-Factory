@@ -1,0 +1,38 @@
+@startuml
+
+abstract class Shape {
+-<color:testsColor(testAttributes[Shape])>drawing: String</color>
++<color:testsColor(testMethods[Shape])>draw()</color>
+}
+
+class Circle {
+-<color:testsColor(testAttributes[Circle])>drawing: String</color>
++<color:testsColor(testMethods[Circle])>draw()</color>
+}
+
+class Triangle {
+-<color:testsColor(testAttributes[Triangle])>drawing: String</color>
++<color:testsColor(testMethods[Triangle])>draw()</color>
+}
+
+class Rectangle {
+-<color:testsColor(testAttributes[Rectangle])>drawing: String</color>
++<color:testsColor(testMethods[Rectangle])>draw()</color>
+}
+
+class Group {
+-<color:testsColor(testAttributes[Rectangle])>drawing: String</color>
++<color:testsColor(testMethods[Rectangle])>draw()</color>
++<color:testsColor(testMethods[Rectangle])>add()</color>
++<color:testsColor(testMethods[Rectangle])>remove()</color>
++<color:testsColor(testMethods[Rectangle])>getChild(): Shape</color>
+}
+
+Circle -up-|> Shape 
+Triangle -up-|> Shape 
+Rectangle -up-|> Shape 
+Group -up-|> Shape 
+Shape "*" -left-o "1" Group
+
+
+@enduml
